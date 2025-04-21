@@ -62,14 +62,14 @@ def signal_macd(m: float, s: float) -> str:
 def safe_format_num(fmt):
     return lambda x: fmt.format(x) if (isinstance(x, (int, float)) and not pd.isna(x)) else ''
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def get_data(ticker: str) -> pd.DataFrame:
     df = yf.download(ticker, period='3mo', auto_adjust=True)
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = df.columns.get_level_values(0)
     return df
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def get_currency_conversion_factor(ticker: str) -> float:
     try:
         currency = yf.Ticker(ticker).info.get("currency", "EUR")
