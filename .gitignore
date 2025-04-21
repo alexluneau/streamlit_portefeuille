@@ -1,0 +1,41 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Jupyter and IPython history
+.ipynb_checkpoints
+*.ipynb
+
+# Environment files
+.venv/
+env/
+venv/
+ENV/
+*.env
+
+# VS Code & PyCharm folders
+.vscode/
+.idea/
+
+# Streamlit specific
+.streamlit/secrets.toml
+.streamlit/*.pyc
+.streamlit/*.pyo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Compiled extensions
+*.so
+
+# Backup files
+*~
+*.bak
+*.swp
