@@ -3,3 +3,4 @@ pandas==2.0.3
 pandas-ta @ git+https://github.com/twopirllc/pandas-ta.git
 streamlit==1.33.0
 yfinance==0.2.55
+setuptools
