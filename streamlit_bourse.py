@@ -175,13 +175,15 @@ portfolio_text = st.sidebar.text_area(
 )
 
 try:
-    portfolio = json.loads(portfolio_text)
+    default_portfolio = st.secrets["portfolio"]["json"]
+    portfolio = json.loads(default_portfolio)
     actions = portfolio.get('actions', [])
     cryptos = portfolio.get('cryptos', [])
 except json.JSONDecodeError:
     st.sidebar.error("JSON invalide.")
     actions = []
     cryptos = []
+
 
 # Paramètres techniques
 st.sidebar.subheader("Paramètres Techniques")
